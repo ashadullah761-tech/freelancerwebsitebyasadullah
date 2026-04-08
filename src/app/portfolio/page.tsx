@@ -1,5 +1,5 @@
 import { createClient } from '@/lib/supabaseServer'
-import { ExternalLink, Github } from 'lucide-react'
+import { ExternalLink } from 'lucide-react'
 import Link from 'next/link'
 import * as motion from 'framer-motion/client'
 import { Badge } from '@/components/ui/badge'
