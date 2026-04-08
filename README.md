@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FreelanceFlow
 
-## Getting Started
+A production-ready full-stack portfolio and freelance management system built with Next.js 15 (App Router), Tailwind CSS, Framer Motion, and Supabase.
 
-First, run the development server:
+## Setup Instructions
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### 1. Supabase Setup
+- Create a new project on [Supabase](https://supabase.com).
+- Go to the SQL Editor and run the entire SQL code from `supabase-schema.sql`.
+- Remember to get your Project URL and Anon Key.
+
+### 2. Environment Variables
+Ensure you have `.env.local` at the root of your project containing:
+```
+NEXT_PUBLIC_SUPABASE_URL=your_project_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Local Development
+Run the following commands:
+```bash
+npm install
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 4. Deployment (Netlify/Vercel)
+This Next.js 15 application is ready to be deployed. 
+- Push the repository to GitHub.
+- Connect your GitHub repository to Netlify or Vercel.
+- **IMPORTANT:** Add the `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` variables to the Environment Variables configuration in the dashboard of Netlify/Vercel before building.
+- Deploy!
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Core Features
+- **Stunning Landing Page** with dark theme and Framer Motion effects.
+- **Dynamic Portfolio** which fetches projects directly from the Supabase database.
+- **Client Inquiry Form** which securely connects to Supabase using Server Actions.
+- **Admin Dashboard** allowing you to view statistics and recent inquiries.
